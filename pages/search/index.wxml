@@ -1,0 +1,28 @@
+<view class="search_row">
+  <van-search
+    value="{{ inpValue }}"
+    input-align="center"
+    placeholder="请输入您要搜索的商品"
+    bind:change="handleInput"
+    shape="round"
+    show-action
+    bind:cancel="handleCancel"
+  />
+</view>
+<view class="search_content">
+  <!-- <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}" class="search_item" wx:for="{{goods}}" wx:key="goods_id">
+    {{item.goods_name}}
+  </navigator> -->
+
+  <van-cell-group>
+    <van-cell  is-link  
+    title-class="title"
+    title="{{item.goods_name}}" 
+    link-type="navigateTo" 
+    url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
+    wx:for="{{goods}}" 
+    wx:key="goods_id"
+    />
+  </van-cell-group>
+
+</view> 
